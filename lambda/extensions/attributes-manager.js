@@ -1,23 +1,22 @@
-const { DynamoDbPersistenceAdapter } = require('ask-sdk-dynamodb-persistence-adapter')
-const AWS = require('aws-sdk')
+// const AWS = require('aws-sdk')
+// const { DynamoDbPersistenceAdapter } = require('ask-sdk-dynamodb-persistence-adapter')
+// const isAWSLambdaEnvironment = ('AWS_LAMBDA_FUNCTION_NAME' in process.env)
 
-const isAWSLambdaEnvironment = !('AWS_LAMBDA_FUNCTION_NAME' in process.env)
+// const dynamoDBClient = !isAWSLambdaEnvironment?
+//   new AWS.DynamoDB({
+//     region: 'us-east-1',
+//     credentials: new AWS.SharedIniFileCredentials({ profile: 'ask-cli' }),
+//   }) :
+//   null
 
-const dynamoDBClient = isAWSLambdaEnvironment?
-  new AWS.DynamoDB({
-    region: 'us-east-1',
-    credentials: new AWS.SharedIniFileCredentials({ profile: 'ask-cli' }),
-  }) :
-  null
-
-const dynamoDbPersistenceAdapter = new DynamoDbPersistenceAdapter({
-  dynamoDBClient,
-  createTable: true,
-  tableName: 'askBedTimeStory',
-})
+// const dynamoDbPersistenceAdapter = new DynamoDbPersistenceAdapter({
+//   dynamoDBClient,
+//   createTable: true,
+//   tableName: 'askBedTimeStory',
+// })
 
 function extendAttributesManager(handlerInput) {
-  // request
+  // REQUEST
   handlerInput.attributesManager.getRequestAttribute = (key) => {
     const attrs = handlerInput.attributesManager.getRequestAttributes()
     return attrs[key]
@@ -32,7 +31,7 @@ function extendAttributesManager(handlerInput) {
     })
   }
 
-  // session
+  // SESSION
   handlerInput.attributesManager.getSessionAttribute = (key) => {
     const attrs = handlerInput.attributesManager.getSessionAttributes()
     return attrs[key]
@@ -47,24 +46,24 @@ function extendAttributesManager(handlerInput) {
     })
   }
 
-  // persistent
-  handlerInput.attributesManager.getPersistentAttributes = dynamoDbPersistenceAdapter.getAttributes.bind(dynamoDbPersistenceAdapter, handlerInput.requestEnvelope)
-  handlerInput.attributesManager.setPersistentAttributes = dynamoDbPersistenceAdapter.saveAttributes.bind(dynamoDbPersistenceAdapter, handlerInput.requestEnvelope)
-  handlerInput.attributesManager.deletePersistentAttributes = dynamoDbPersistenceAdapter.deleteAttributes.bind(dynamoDbPersistenceAdapter, handlerInput.requestEnvelope)
+  // PERSISTENT
+  // handlerInput.attributesManager.getPersistentAttributes = dynamoDbPersistenceAdapter.getAttributes.bind(dynamoDbPersistenceAdapter, handlerInput.requestEnvelope)
+  // handlerInput.attributesManager.setPersistentAttributes = dynamoDbPersistenceAdapter.saveAttributes.bind(dynamoDbPersistenceAdapter, handlerInput.requestEnvelope)
+  // handlerInput.attributesManager.deletePersistentAttributes = dynamoDbPersistenceAdapter.deleteAttributes.bind(dynamoDbPersistenceAdapter, handlerInput.requestEnvelope)
 
-  handlerInput.attributesManager.getPersistentAttribute = async (key) => {
-    const attrs = await dynamoDbPersistenceAdapter.getAttributes(handlerInput.requestEnvelope)
-    return attrs[key]
-  }
+  // handlerInput.attributesManager.getPersistentAttribute = async (key) => {
+  //   const attrs = await dynamoDbPersistenceAdapter.getAttributes(handlerInput.requestEnvelope)
+  //   return attrs[key]
+  // }
 
-  handlerInput.attributesManager.setPersistentAttribute = async (key, value) => {
-    const attrs = await  dynamoDbPersistenceAdapter.getAttributes(handlerInput.requestEnvelope)
+  // handlerInput.attributesManager.setPersistentAttribute = async (key, value) => {
+  //   const attrs = await  dynamoDbPersistenceAdapter.getAttributes(handlerInput.requestEnvelope)
 
-    return dynamoDbPersistenceAdapter.saveAttributes(handlerInput.requestEnvelope, {
-      ...attrs,
-      [key]: value,
-    })
-  }
+  //   return dynamoDbPersistenceAdapter.saveAttributes(handlerInput.requestEnvelope, {
+  //     ...attrs,
+  //     [key]: value,
+  //   })
+  // }
 }
 
 module.exports = extendAttributesManager
