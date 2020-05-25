@@ -1,0 +1,15 @@
+.State {
+  background-color: lightgray;
+
+  width: 12rem;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.State header {
+  font-weight: bold;
+}
+
+.StateAction {
+  margin-left: 2rem;
+}

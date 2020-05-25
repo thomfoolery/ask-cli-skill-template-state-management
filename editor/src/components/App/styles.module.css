@@ -1,0 +1,16 @@
+.App {
+  position: relative;
+}
+
+.Node,
+.Children {
+  display: flex;
+}
+
+.Node {
+  flex-direction: column;
+}
+
+.Children {
+  flex-direction: row;
+}

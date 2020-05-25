@@ -1,0 +1,36 @@
+{
+  "@LaunchRequest": {
+    "speak": "Hello."
+  },
+  "@SessionEndedRequest": {
+    "speak": "Check back soon for new stories and exciting adventures. Goodbye!"
+  },
+  "@Error": {
+    "speak": "Sorry, I had trouble doing what you asked. Please say that again.",
+    "reprompt": "Please say that again."
+  },
+  "AskToTellStory": {
+    "speak": "Would you like to hear a story?",
+    "reprompt": "Are you there? Would you like to hear a story?"
+  },
+  "AskToTellAnotherStory": {
+    "speak": "Would you like to hear another story?",
+    "reprompt": "Are you there? Would you like to hear another story?"
+  },
+  "TellStoryA": {
+    "speak": "Once upon a time there was a knight named ${slots.playerName}. Their favorite color was ${slots.favoriteColor} and they loved ${slots.favoriteAnimal}s. They were walking along in the forest one day when they heard a distressed ${slots.favoriteAnimal}. ${slots.playerName} spun around to see a huge dragon towering above them. ${slots.playerName} drew their sword and readied their ${slots.favoriteColor} shield. The dragon blew hot fire down upon them but they rolled out of the way. ${slots.playerName} lunged forward and slayed the dragon. It landed on the ground with a loud thump. ${slots.playerName} picked themself up, and dusted themself off. They looked around for the distressed ${slots.favoriteAnimal} and found them hiding up a tall tree. ${slots.playerName} coaxed the {slots.favoriteAnimal} down from the tree and carried them home. ${slots.playerName} and the {slots.favoriteAnimal} became best friends and opened a practice to help angry dragons understand and deal with their emotions. They lived happily ever after."
+  },
+  "TellStoryB": {
+    "speak": "Once upon a time, in a land far away, there lived the Jellybean King. He lived on top of a mountain, above the candy floss clouds, in a castle made of magic crystals. The Jellybean King was kind to his people, but he harboured a terrible secret: the Jellybean King did not like candy. It hurt his teeth! Sour candy was too sour, sweet candy tastes too sweet. The Jellybean King felt that by not liking candy, he was being dishonest to his subjects. But one day a young child named ${slots.playerName} came from the nearby village. ${slots.playerName}’s parents owned a farm that grows a special kind of candy: ${slots.favoriteFlavor} ${slots.favoriteCandy}. ${slots.playerName} knew that the recent harvest was so special and so delicious, that they just had to share it with the Jellybean King. The King was hesitant, he did not want to eat the candy but he didn’t want to be rude because he knew how far the child travelled to share this candy. The King closed his eyes and braced for the terrible taste. He munched on the ${slots.favoriteCandy}, but then something unexpected happened.. The flavour was absolutely delicious. It was triumphant. It was unbelievably good. The Jellybean King loved the  ${slots.favoriteFlavor} ${slots.favoriteCandy}. ${slots.playerName} had changed his mind. The King was overjoyed, and granted ${slots.playerName} an extra special crystal from his magical castle. This helped the child’s family grow extra large  ${slots.favoriteFlavor} ${slots.favoriteCandy} in the next crop. And ${slots.playerName}’s family lived happily ever after."
+  },
+  "TellStoryC": {
+    "speak": "One hundred million lightyears away there is a planet called ${slots.favoritePlanet}. On the Planet ${slots.favoritePlanet} there is a delightful community of very tiny people, who are about the size of your thumb. Despite their small size, they keep house pets that are regularly sized, according to our standards. House cats tower over the people of Planet  ${slots.favoritePlanet}. But the people don’t mind. The cats curl up and snooze by the tiny people’s tiny windows. They climb the tall trees on Planet ${slots.favoritePlanet}, the tallest trees being only slightly larger than the cats themselves. Within the largest city of Planet ${slots.favoritePlanet}, there is a child named ${slots.playerName} and their large house cat Waldo. Waldo loves belly rubs and eating hamburgers. ${slots.playerName} takes Waldo on long walks through the forest, just to escape the hustle and bustle of the city. There Waldo can tire themselves out by climbing trees and playing with other house cats that are going on their own walks with their owners. Waldo is happiest when outside, but knows that the best sleeps happen in a warm and cozy home. Some say that our house cats are long lost descendants of the cats on Planet ${slots.favoritePlanet}. But that’s another story."
+  },
+  "Goodbye": {
+    "speak": "Check back soon for new stories and exciting adventures. Goodbye!"
+  },
+  "Help": {
+    "speak": "I am a great bed time story teller. Ask me to tell you a bed time story.",
+    "reprompt": "Ask me to tell you a bed time story."
+  }
+}

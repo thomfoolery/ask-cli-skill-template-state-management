@@ -1,0 +1,102 @@
+{
+  "states": [
+    {
+      "id": "@Default",
+      "actions": [],
+      "requests": [
+        {
+          "intentName": "AMAZON.CancelIntent",
+          "stateId": "Goodbye"
+        },
+        {
+          "intentName": "AMAZON.StopIntent",
+          "stateId": "Goodbye"
+        },
+        {
+          "intentName": "AMAZON.HelpIntent",
+          "stateId": "Help"
+        },
+        {
+          "intentName": "AMAZON.FallbackIntent",
+          "stateId": "Error"
+        },
+        {
+          "intentName": "HelloWorldIntent",
+          "stateId": "HelloWorld"
+        }
+      ]
+    },
+    {
+      "id": "@LaunchRequest",
+      "actions": [
+        {
+          "id": "applyContent",
+          "args": [
+            "@LaunchRequest"
+          ]
+        },
+        {
+          "id": "transitionToState",
+          "args": [
+            "HelloWorld"
+          ]
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "HelloWorld",
+      "actions": [
+        {
+          "id": "applyContent",
+          "args": [
+            "HelloWorld"
+          ]
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "Goodbye",
+      "actions": [
+        {
+          "id": "applyContent",
+          "args": [
+            "Goodbye"
+          ]
+        },
+        {
+          "id": "withShouldEndSession",
+          "args": [
+            true
+          ]
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "Help",
+      "actions": [
+        {
+          "id": "applyContent",
+          "args": [
+            "Help"
+          ]
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "Error",
+      "actions": [
+        {
+          "id": "applyContent",
+          "args": [
+            "@Error"
+          ]
+        }
+      ],
+      "requests": []
+    }
+  ]
+}

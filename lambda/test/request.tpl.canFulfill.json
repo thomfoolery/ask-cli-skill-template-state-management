@@ -1,0 +1,25 @@
+{
+    "request": {
+      "type": "CanFulfillIntentRequest",
+      "requestId": "...",
+      "intent": {
+        "name": "TellStory"
+      },
+      "locale": "en-US",
+      "timestamp": "..."
+    },
+    "context": {
+      "System": {
+        "application": {
+          "applicationId": "amzn1.ask.skill.<skill-id-value>"
+        },
+        "user": {
+          "userId": "<user-id-value>"
+        },
+        "device": {
+          "supportedInterfaces": {}
+        }
+      }
+    },
+    "version": "1.0"
+  }

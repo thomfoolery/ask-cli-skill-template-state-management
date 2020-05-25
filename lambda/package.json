@@ -1,0 +1,22 @@
+{
+    "name": "alexa-dead-code",
+    "version": "0.0.1",
+    "description": "Hack the planet",
+    "main": "index.js",
+    "scripts": {
+      "test": "node test"
+    },
+    "author": "Thomas Yuill",
+    "license": "ISC",
+    "dependencies": {
+      "ask-sdk-core": "^2.6.0",
+      "ask-sdk-dynamodb-persistence-adapter": "^2.8.0",
+      "ask-sdk-model": "^1.18.0",
+      "aws-sdk": "^2.326.0",
+      "es6-template-strings": "^2.0.1",
+      "ramda": "^0.27.0"
+    },
+    "devDependencies": {
+      "yargs": "^15.3.1"
+    }
+  }

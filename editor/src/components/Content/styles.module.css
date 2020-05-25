@@ -1,0 +1,9 @@
+.Content {
+  background-color: lightskyblue;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.Content header {
+  font-weight: bold;
+}
